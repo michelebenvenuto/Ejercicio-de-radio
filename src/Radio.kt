@@ -1,17 +1,13 @@
 package radio
-fun main(arg: Array<String>){class Radio (
+fun main(arg: Array<String>){
+    class Radio (
         var encendido: Boolean = false,
         var frecuencia: String = "FM",
         var volumen: Int = 0,
         var estacion: Int
-) {
-    fun encender() {
-        encendido = true
-    }
+) { fun encender() { encendido = true }
 
-    fun apagar() {
-        encendido = false
-    }
+    fun apagar() { encendido = false }
 
     override fun toString(): String {
         return """
@@ -24,5 +20,7 @@ fun main(arg: Array<String>){class Radio (
     }
 }
     val radio = Radio(estacion= 87)
-    println(radio)
+    var opcion: Int=0
+    do()while(opcion!=6)
+    }
 }
