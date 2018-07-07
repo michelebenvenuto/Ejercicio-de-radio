@@ -54,19 +54,28 @@ fun main(arg: Array<String>){
         else if(opcion==2) {
             println("Ingrese cuanto quiere aumentarle al volumen")
             cambiarVolumen = readLine()!!.toInt()
-            radio.volumen= radio.volumen + cambiarVolumen }
+            radio.volumen= radio.volumen + cambiarVolumen
+            if(radio.volumen>100){
+                radio.volumen=100
+                println("El volumen ya esta al maximo")}}
         else if(opcion==3) {
             println("Ingrese cuanto quiere disminuirle al volumen")
             cambiarVolumen = readLine()!!.toInt()
-            radio.volumen= radio.volumen - cambiarVolumen }
+            radio.volumen= radio.volumen - cambiarVolumen
+            if(radio.volumen<0){
+                radio.volumen=0
+                println("El volumen ya esta al minimo")
+            }}
         else if(opcion==4) {
             println("Ingrese cuanto quiere aumentarle a la estacion")
             cambiarEstacion = readLine()!!.toDouble()
-            radio.estacion= radio.estacion + cambiarEstacion}
+            radio.estacion= radio.estacion + cambiarEstacion
+            if(radio.frecuencia=="FM"){if(radio.estacion>100){radio.estacion=87.0}}}
         else if(opcion==5) {
             println("Ingrese cuanto quiere dsminuir a la estacion")
             cambiarEstacion = readLine()!!.toDouble()
-            radio.estacion= radio.estacion - cambiarEstacion}
+            radio.estacion= radio.estacion - cambiarEstacion
+            if(radio.frecuencia=="FM"){if(radio.estacion<87){radio.estacion=100.0}}}
         else if(opcion==6) {
             if(radio.frecuencia=="FM" ){
              radio.frecuencia="AM"}
