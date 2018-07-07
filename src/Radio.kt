@@ -43,6 +43,7 @@ fun main(arg: Array<String>){
         println("Ingrese el numero de la opcion que quiera realizar")
         var opcion= readLine()!!.toInt()
         if (opcion==1){radio.encender()}
+        else(println("Esa opcion no esta en el menu"))
         while(radio.encendido==true or  (opcion!=7)) {
         println(radio)
         println(menuEncendido)
@@ -70,5 +71,6 @@ fun main(arg: Array<String>){
             if(radio.frecuencia=="FM" ){
              radio.frecuencia="AM"}
             else{radio.frecuencia= "FM"} }
+            else(println("Esa opcion no esta en el menu"))
     }}while(opcion !=7)
 }
