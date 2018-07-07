@@ -20,7 +20,7 @@ fun main(arg: Array<String>){
     }
 }
     val radio = Radio(estacion= 87.0)
-    var opcion: Int
+    var opcion: Int=0
     var cambiarVolumen: Int
     var cambiarEstacion: Double
     val menuEncendido: String=("""
@@ -31,13 +31,25 @@ fun main(arg: Array<String>){
         4)Aumentar Estacion
         5)Disminuir Estacion
         6)Cambiar de FM a AM o viceversa
+        *Importante antes de salir recuerde apagar el radio""".trimIndent())
+    val menuApagado: String=("""
+        Bienvenido:
+        1)Encender
         7)Salir""".trimIndent())
-    do {
+
+    do{
+        println(radio)
+        println(menuApagado)
+        println("Ingrese el numero de la opcion que quiera realizar")
+        var opcion= readLine()!!.toInt()
+        if (opcion==1){radio.encender()}
+        while(radio.encendido==true or  (opcion!=7)) {
         println(radio)
         println(menuEncendido)
         println("Ingrese el numero de la opcion que quiera realizar")
         var opcion= readLine()!!.toInt()
-        if(opcion==1){ }
+        if(opcion==1){
+        radio.apagar() }
         else if(opcion==2) {
             println("Ingrese cuanto quiere aumentarle al volumen")
             cambiarVolumen = readLine()!!.toInt()
@@ -57,7 +69,6 @@ fun main(arg: Array<String>){
         else if(opcion==6) {
             if(radio.frecuencia=="FM" ){
              radio.frecuencia="AM"}
-            else{radio.frecuencia= "FM"}
-            }
-    }while(opcion !=7)
+            else{radio.frecuencia= "FM"} }
+    }}while(opcion !=7)
 }
